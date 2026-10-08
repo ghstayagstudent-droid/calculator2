@@ -1,0 +1,40 @@
+/* 1. Box sizing & resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Full height support for root layout */
+html, body {
+  height: 100%;
+}
+
+/* 3. React Root isolation & layout setup */
+#root {
+  min-height: 100%;
+  isolation: isolate; /* Ensures z-index/modals don't bleed into global context */
+}
+
+/* 4. Responsive media elements */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 5. Typography and text rendering */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 6. Form elements font inheritance */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 7. Prevent text overflow on headers & paragraphs */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}

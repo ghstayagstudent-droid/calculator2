@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* Prevent Page Scrolling & Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #030a24; /* Darkest Navy from Palette */
+  height: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Main Page Container */
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Header Title Above Calculator */
+.CalcHeader {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff5d6; /* Light Cream Title */
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Calculator Body with 3D Bevel and Shadow */
+.Calculator {
+  width: 100%;
+  max-width: 360px;
+  padding: 24px;
+  background-color: #0e1a38; /* Deep Midnight Blue Body */
+  border: 2px solid #071026;
+  border-radius: 16px;
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.5),
+    0 8px 10px -6px rgba(0, 0, 0, 0.3),
+    inset 0 2px 3px rgba(255, 255, 255, 0.1),
+    inset 0 -3px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Digital LED Display Screen */
+.CalcDisplay {
+  background-color: #070e20;
+  color: #fff5d6; /* Cream LED Glow Text */
+  height: 76px;
+  font-family: 'VT323', monospace;
+  font-size: 1.8rem;
+  padding: 12px 18px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 3px solid #030714;
+  box-shadow: 
+    inset 0 4px 8px rgba(0, 0, 0, 0.8),
+    0 0 12px rgba(255, 245, 214, 0.15);
+  text-shadow: 0 0 8px rgba(255, 245, 214, 0.5);
+  user-select: none;
+}
+
+/* 4-Column Grid for Buttons */
+.CalcButtons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* Base Styles for All Buttons */
+.CalcButton,
+.ClearButton,
+.OperatorButton {
+  height: 54px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+/* Standard Number Buttons (Cream Keycaps) */
+.CalcButton {
+  background-color: #fff5d6;
+  color: #081226;
+  box-shadow: 0 4px 0 #ccbd95, 0 5px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Clear Button (Dark Blue Highlight) */
+.ClearButton {
+  background-color: #8b2828; /* Accent Crimson Clear */
+  color: #ffffff;
+  box-shadow: 0 4px 0 #5e1a1a, 0 5px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Operator Buttons (Slate Blue) */
+.OperatorButton {
+  background-color: #233a6b;
+  color: #fff5d6;
+  box-shadow: 0 4px 0 #152445, 0 5px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Active Press Effect */
+.CalcButton:active,
+.ClearButton:active,
+.OperatorButton:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 transparent, inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Custom "Tayag" Full-Width Button */
+.CalcButtons > button:last-child {
+  grid-column: span 4;
+  background-color: #142548;
+  color: #fff5d6;
+  box-shadow: 0 4px 0 #0a1428, 0 5px 6px rgba(0, 0, 0, 0.3);
+}
